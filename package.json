@@ -1,0 +1,13 @@
+{
+  "name": "estandarizacion",
+  "version": "1.0.0",
+  "description": "Conjunto acuerdos para la estandarización",
+  "main": "index.js",
+  "scripts": {
+    "commit": "cz",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -11,10 +11,10 @@ Conjunto acuerdos para la estandarización
 - [x] conventional commits
 - [x] commitizen, commitlint y husky
 - [x] standard-version y changelogs
-- [ ] eslint y prettier
-- [ ] estilos de CSS y HTML
+- [x] eslint y prettier
 - [ ] git rebase
 - [ ] git squash
+- [ ] estilos de CSS y HTML
 - [ ] soporte TS
 
 # Conventional Commits convention
@@ -162,6 +162,43 @@ npx eslint --init
 
 Seguir los pasos y eleguir la guía de estilos de Airbnb.
 
+## Configurar prettier
+```bash
+npm install --save-dev --save-exact prettier
+npm install --save-dev eslint-plugin-prettier eslint-config-prettier
+```
+
+Agregar la siguiente configuración al archivo `.eslintrc.json` o `.eslintrc.js`
+```json
+{
+  "extends": [ "plugin:prettier/recommended", "prettier" ],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": ["error", { "singleQuote": true } ]
+  }
+}
+```
+
+## Configurar VSCode
+Instalar extensión de VSCode para ESLint:
+
+![Drag Racing](https://imgs.developpaper.com/imgs/1294970808-b39564d829bf29f2_articlex.png)
+
+Agregar la siguiente configuración
+```json
+{
+  "eslint.alwaysShowStatus": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "files.eol": "\n",
+  "editor.formatOnSave": true,
+}
+```
+
+# TO DO
+- Crear un paquete que instale todos los modulos utilizados en esta guia.
+
 # Documentación
 
 - [Conventional Commits convention](https://www.conventionalcommits.org/en/v1.0.0/)
@@ -172,4 +209,5 @@ Seguir los pasos y eleguir la guía de estilos de Airbnb.
 - standard-version: [npm](https://www.npmjs.com/package/standard-version)
 - changelog: [docs](https://keepachangelog.com/en/1.0.0/)
 - ESlint: [docs](https://eslint.org/)
-- eslint-config-airbnb-base: [eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base)
+- Airbnb JS Style Guide: [docs](https://github.com/airbnb/javascript)
+- prettier: [docs](https://prettier.io/)

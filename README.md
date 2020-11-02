@@ -2,15 +2,20 @@
 
 Conjunto acuerdos para la estandarización
 
+# Requerimientos
+
+- Node +8
+
 # Temario
 
 - [x] conventional commits
 - [x] commitizen, commitlint y husky
-- [ ] standard-version y changelogs
-- [ ] git rebase
-- [ ] git squash
+- [x] standard-version y changelogs
 - [ ] eslint y prettier
 - [ ] estilos de CSS y HTML
+- [ ] git rebase
+- [ ] git squash
+- [ ] soporte TS
 
 # Conventional Commits convention
 
@@ -19,7 +24,7 @@ Para crear commit que cumplan con [Conventional Commits convention](https://www.
 ## Instalación
 
 ```bash
-npm install commitizen --save-dev
+npm i commitizen --save-dev
 ```
 
 ## Inicialización
@@ -66,7 +71,7 @@ Para validar que los mensaje de commit hecho desde cualquier herramienta de git 
 ### Instalación
 
 ```bash
-npm install @commitlint/config-convencational @commitlint/cli husky@next --save-dev
+npm i @commitlint/config-convencational @commitlint/cli husky@next --save-dev
 ```
 
 ### Inicialización
@@ -139,6 +144,24 @@ En algunas ocaciones será buena idea compilar o testear el proyecto antes de cr
 
 > Note que i se agregó el comando `npm test` en hook `pre-push`, la compilación y los test se ejecutará tambien al ahcer el push.
 
+# Guía de estilos
+
+Para usar una guía de estilos la harramienta recomandada es ESlint.
+
+## Instalación
+
+```bash
+npm install --save-dev eslint
+```
+
+## Iniciar configuración guiada
+
+```bash
+npx eslint --init
+```
+
+Seguir los pasos y eleguir la guía de estilos de Airbnb.
+
 # Documentación
 
 - [Conventional Commits convention](https://www.conventionalcommits.org/en/v1.0.0/)
@@ -148,3 +171,5 @@ En algunas ocaciones será buena idea compilar o testear el proyecto antes de cr
 - semver: [docs](https://semver.org/)
 - standard-version: [npm](https://www.npmjs.com/package/standard-version)
 - changelog: [docs](https://keepachangelog.com/en/1.0.0/)
+- ESlint: [docs](https://eslint.org/)
+- eslint-config-airbnb-base: [eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base)

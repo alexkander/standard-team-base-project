@@ -129,7 +129,7 @@ Se recomienda crear comando npm para facilitar la creación de los releases. Par
 
 En algunas ocaciones será buena idea compilar o testear el proyecto antes de crear el release. Para esto agregar el comando `npm prerelease`
 
-```json
+```
 {
   "scripts": {
     // Compilar antes de testear

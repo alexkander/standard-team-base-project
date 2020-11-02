@@ -27,9 +27,11 @@ npm install commitizen --save-dev
 Agregar al `package.json`
 
 ```json
+{
   "scripts": {
     "commit": "cz"
   }
+}
 ```
 
 Inicializar el repo para usar la especificación ejecutar el siguiente comando:
@@ -100,9 +102,49 @@ npx husky add pre-push "npx test"
 
 > Nota: Debería aplicarse la correción del archivo como en el paso anterior, en este caso sería el archivo `.husky/pre-push`.
 
+# Versionado semántico (semver) y el generación de changelogs
+
+Para automatizar el versionado semántico y la generación de changelogs utilizamos el módulo `standard-version`.
+
+## Instalación
+
+```bash
+npm i --save-dev standard-version
+```
+
+Se recomienda crear comando npm para facilitar la creación de los releases. Para esto agregar en el `package.json` el siguiente comando:
+
+```json
+{
+  "scripts": {
+    "release": "standard-version"
+  }
+}
+```
+
+En algunas ocaciones será buena idea compilar o testear el proyecto antes de crear el release. Para esto agregar el comando `npm prerelease`
+
+```json
+{
+  "scripts": {
+    // Compilar antes de testear
+    "pretest": "npm run build",
+    // Testear antes de crear release
+    "prerelease": "npm run test",
+    // Crear release con archivo compilados
+    "release": "git add <file(s) to commit> && standard-version -a"
+  }
+}
+```
+
+> Note que i se agregó el comando `npm test` en hook `pre-push`, la compilación y los test se ejecutará tambien al ahcer el push.
+
 # Documentación
 
 - [Conventional Commits convention](https://www.conventionalcommits.org/en/v1.0.0/)
 - commitizen: [npm](https://www.npmjs.com/package/commitizen) | [github](https://github.com/commitizen/cz-cli)
 - commitlint: [docs](https://commitlint.js.org/) | [github](https://github.com/conventional-changelog/commitlint)
 - husky v5: [docs](https://typicode.github.io/husky)
+- semver: [docs](https://semver.org/)
+- standard-version: [npm](https://www.npmjs.com/package/standard-version)
+- changelog: [docs](https://keepachangelog.com/en/1.0.0/)

@@ -71,7 +71,7 @@ Para validar que los mensaje de commit hecho desde cualquier herramienta de git 
 ### Instalación
 
 ```bash
-npm i @commitlint/config-convencational @commitlint/cli husky@next --save-dev
+npm i @commitlint/config-conventional @commitlint/cli husky@next --save-dev
 ```
 
 ### Inicialización
